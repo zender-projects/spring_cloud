@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-fd
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+
+    #指定区域，一个区可以包含多个zone
+    #region: china
+    #avaliable-zones:
+    #  china: e, s, n, w
+    #service-url:
+    #  e: url1
+    #  s: url2
+    #  n: url3
+    #  w: url4
+
+#开启对hystrix的支持
+hystrix:
+  enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+cloudApi: http://localhost:8081
