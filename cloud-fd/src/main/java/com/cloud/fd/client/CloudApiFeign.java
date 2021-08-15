@@ -7,10 +7,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient(
         value = "cloud-base",
         contextId = "cloudApiFeign",
-        path = CloudApi.PREFIX,
+        path = CloudApi.PREFIX
+        //,
         //fallback = CloudApi.DefaultFallback.class
         //fallbackFactory = CloudApiFeign.DefaultFallbackFactory.class
-        url = "${cloudApi}"
+        //url = "${cloudApi}"
 )
 public interface CloudApiFeign extends CloudApi {
 

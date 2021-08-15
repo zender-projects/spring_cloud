@@ -5,8 +5,11 @@ eureka:
   instance:
     hostname: localhost
   client:
+    #不注册自己
     register-with-eureka: false
+    #不拉取注册信息
     fetch-registry: false
+    #eureka server地址
     service-url:
       defaultZone: http://localhost:8000/eureka
   server:
