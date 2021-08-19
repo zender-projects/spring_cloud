@@ -21,6 +21,9 @@
         <module>cloud-fd</module>
         <module>cloud-api</module>
         <module>cloud-gateway</module>
+        <module>basic-algorithm</module>
+        <module>basic-datastructure</module>
+        <module>basic-java</module>
     </modules>
 
     <properties>
