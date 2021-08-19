@@ -22,7 +22,7 @@ public class BaseApplication {
         //AutoServiceRegistrationConfiguration
 
         //org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-        org.springframework.cloud.netflix.eureka.config.EurekaClientConfigServerAutoConfiguration,\
+        /*org.springframework.cloud.netflix.eureka.config.EurekaClientConfigServerAutoConfiguration,\
         org.springframework.cloud.netflix.eureka.config.EurekaDiscoveryClientConfigServiceAutoConfiguration,\
         org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration,\
         org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration,\
@@ -30,7 +30,7 @@ public class BaseApplication {
 
         org.springframework.cloud.bootstrap.BootstrapConfiguration=\
         org.springframework.cloud.netflix.eureka.config.EurekaDiscoveryClientConfigServiceBootstrapConfiguration
-
+*/
 
 
         SpringApplication.run(BaseApplication.class);
