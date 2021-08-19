@@ -1,7 +1,11 @@
 package com.cloud.fd.client;
 
 import com.cloud.api.CloudApi;
+import com.netflix.loadbalancer.DynamicServerListLoadBalancer;
+import com.netflix.loadbalancer.IPing;
 import feign.hystrix.FallbackFactory;
+import org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration;
+import org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient(
@@ -21,7 +25,13 @@ public interface CloudApiFeign extends CloudApi {
         public CloudApi create(Throwable throwable) {
             //记录异常
             throwable.printStackTrace();
+            //RibbonAutoConfiguration
+            //EurekaClientAutoConfiguration
+            //IPing
+            //DynamicServerListLoadBalancer
+            /**
 
+             * */
             //返回降级对象
             return new CloudApi.DefaultFallback();
         }
