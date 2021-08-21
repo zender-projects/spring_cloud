@@ -2,6 +2,7 @@ package com.cloud.fd.config;
 
 import com.cloud.fd.lb.FdLoadBalanceRule;
 import com.netflix.loadbalancer.IRule;
+import feign.Logger;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +23,12 @@ public class FdConfig {
     @Bean
     public IRule loadBalanceRule() {
         List<Integer> excludePorts = new ArrayList<>();
-        excludePorts.add(8081);
+        //excludePorts.add(8081);
         return new FdLoadBalanceRule(excludePorts);
+    }
+
+    @Bean
+    public Logger.Level feignLevel() {
+        return Logger.Level.BASIC;
     }
 }

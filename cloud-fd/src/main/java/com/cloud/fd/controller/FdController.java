@@ -31,9 +31,9 @@ public class FdController {
         String setCookie = request.getHeader("Set-Cookie"); //没有
         String cookie = request.getHeader("Cookie"); //没有
 
-        System.out.println("token=" + token);
-        System.out.println("set-cookie=" + setCookie);
-        System.out.println("cookie="+cookie);
+        //System.out.println("token=" + token);
+        //System.out.println("set-cookie=" + setCookie);
+        //System.out.println("cookie="+cookie);
 
         //FeignClient
 
