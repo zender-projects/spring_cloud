@@ -13,6 +13,36 @@ package com.offer;
  */
 public class _004_ReplaceSpace {
 
+    public static String replaceSpace(String originStr) {
+        //字符串转字符数组
+        char[] chars = originStr.toCharArray();
 
+        int spaceNum = 0;
+        //计算出空格的个数
+        for (int i = 0;i < chars.length;i ++) {
+            if (chars[i] == ' ') {
+                spaceNum ++ ;
+            }
+        }
+
+        int newCharsLength = chars.length + spaceNum * 2;
+        char[] newChars = new char[newCharsLength];
+
+        int newStrIndex = 0;
+        for (int index = 0; index < chars.length; index ++) {
+            if (chars[index] != ' ') {
+                newChars[newStrIndex++] = chars[index];
+            } else {
+                newChars[newStrIndex++] = '%';
+                newChars[newStrIndex++] = '2';
+                newChars[newStrIndex++] = '0';
+            }
+        }
+        return new String(newChars);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(replaceSpace("a b c"));
+    }
 
 }

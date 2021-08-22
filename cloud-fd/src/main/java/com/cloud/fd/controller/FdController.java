@@ -27,9 +27,9 @@ public class FdController {
         //return restTemplate.getForEntity("http://cloud-base/base/hello", String.class).getBody();
 
         //获取zuul中的敏感头
-        String token = request.getHeader("token");   //有
-        String setCookie = request.getHeader("Set-Cookie"); //没有
-        String cookie = request.getHeader("Cookie"); //没有
+        //String token = request.getHeader("token");   //有
+        //String setCookie = request.getHeader("Set-Cookie"); //没有
+        //String cookie = request.getHeader("Cookie"); //没有
 
         //System.out.println("token=" + token);
         //System.out.println("set-cookie=" + setCookie);
