@@ -9,6 +9,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8000/eureka
+#开启hystrix dashboard端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
 #配置路由规则
 zuul:
@@ -41,3 +47,7 @@ zuul:
                     #  origin  cloud-gateway:fd:0:0:0:0:0:0:0:1
       #,origin,url   #指定限流维度
 
+  #灰度规则
+  gray:
+    users: zhangsan,lisi
+    version: V2

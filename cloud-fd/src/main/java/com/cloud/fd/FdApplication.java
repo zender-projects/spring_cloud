@@ -1,5 +1,6 @@
 package com.cloud.fd;
 
+import com.cloud.gray.GrayAutoConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +9,7 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Import;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
 @SpringBootApplication
 //开启hystrix dashboard
 @EnableHystrixDashboard
+//@Import(GrayAutoConfiguration.class)
 public class FdApplication {
     public static void main(String[] args) {
         SpringApplication.run(FdApplication.class);

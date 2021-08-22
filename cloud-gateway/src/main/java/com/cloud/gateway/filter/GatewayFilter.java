@@ -68,7 +68,7 @@ public class GatewayFilter extends ZuulFilter {
         RequestContext.getCurrentContext().getRequest();
         RequestContext.getCurrentContext().getResponse();
         RequestContext.getCurrentContext().getResponseBody();
-        System.out.println("GatewayFilter 过滤通过");
+        //System.out.println("GatewayFilter 过滤通过");
         return null;
     }
 }

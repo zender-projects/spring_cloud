@@ -14,6 +14,7 @@ public class HeaderInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
         //设置一个请求头
+        System.out.println("headers=" + requestTemplate.headers());
         requestTemplate.header("cloud_token", UUID.randomUUID().toString());
     }
 }

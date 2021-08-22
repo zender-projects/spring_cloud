@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>eureka-server</module>
+        <module>cloud-eureka</module>
         <module>cloud-base-01</module>
         <module>cloud-base-02</module>
         <module>cloud-fd</module>
@@ -23,6 +23,8 @@
         <module>cloud-gateway</module>
         <module>basic-algorithm</module>
         <module>basic-datastructure</module>
+        <module>cloud-autoconfig</module>
+        <module>cloud-gray</module>
     </modules>
 
     <properties>

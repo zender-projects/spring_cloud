@@ -14,11 +14,11 @@ import java.util.List;
 @SpringBootConfiguration
 public class FdConfig {
 
-    @Bean
+    /*@Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
-    }
+    }*/
 
     @Bean
     public IRule loadBalanceRule() {
