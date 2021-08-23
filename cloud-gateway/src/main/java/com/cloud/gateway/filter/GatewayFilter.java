@@ -44,11 +44,11 @@ public class GatewayFilter extends ZuulFilter {
 
         RequestContext requestContext = RequestContext.getCurrentContext();
         //如超载了
-        if (!RATE_LIMITER.tryAcquire()) {
+        /*if (!RATE_LIMITER.tryAcquire()) {
             //中断服务路由
             requestContext.setSendZuulResponse(false);
             requestContext.setResponseStatusCode(HttpStatus.TOO_MANY_REQUESTS.value());
-        }
+        }*/
 
         //判断服务路由是否已经被中断
         /*if (requestContext.sendZuulResponse()) {

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
@@ -17,8 +18,8 @@ import java.util.List;
 //开启feign client支持
 @EnableFeignClients
 //开启hystrix熔断器
-@EnableCircuitBreaker
-@SpringBootApplication
+//@EnableCircuitBreaker
+@SpringCloudApplication
 //开启hystrix dashboard
 @EnableHystrixDashboard
 //@Import(GrayAutoConfiguration.class)

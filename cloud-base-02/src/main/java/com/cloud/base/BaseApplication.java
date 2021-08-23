@@ -2,6 +2,7 @@ package com.cloud.base;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationConfiguration;
 import org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration;
@@ -9,8 +10,9 @@ import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfigurati
 import org.springframework.cloud.netflix.eureka.config.EurekaClientConfigServerAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.config.EurekaDiscoveryClientConfigServiceAutoConfiguration;
 
-@SpringBootApplication
+//@SpringBootApplication
 //@EnableDiscoveryClient
+@SpringCloudApplication
 public class BaseApplication {
 
     public static void main(String[] args) {

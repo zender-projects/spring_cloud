@@ -17,4 +17,10 @@ public class BaseController implements CloudApi {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         return "Hello, Cloud-Base-02, cloudToken => " + request.getHeader("cloud_token");
     }
+
+    @Override
+    public String circuitBreakerOpen() {
+        //throw new RuntimeException("circuitBreakerOpen");
+        return "circuitBreakerOpen";
+    }
 }

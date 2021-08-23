@@ -25,6 +25,7 @@
         <module>basic-datastructure</module>
         <module>cloud-autoconfig</module>
         <module>cloud-gray</module>
+        <module>cloud-turbine</module>
     </modules>
 
     <properties>

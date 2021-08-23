@@ -13,3 +13,11 @@ eureka:
   instance:
     metadata-map:
       version: V2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false

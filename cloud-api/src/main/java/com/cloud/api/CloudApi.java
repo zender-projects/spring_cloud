@@ -14,11 +14,19 @@ public interface CloudApi {
     @GetMapping("/hello")
     String hello();
 
+    @GetMapping("/circuitBreakerOpen")
+    String circuitBreakerOpen();
+
     //默认降级实现
     class DefaultFallback implements CloudApi {
         @Override
         public String hello() {
             return "default fallback";
+        }
+
+        @Override
+        public String circuitBreakerOpen() {
+            return "circuitBreakerOpen fallback";
         }
     }
 }

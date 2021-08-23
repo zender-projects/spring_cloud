@@ -9,12 +9,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8000/eureka
-#开启hystrix dashboard端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
+
 
 #配置路由规则
 zuul:
@@ -33,16 +28,16 @@ zuul:
 
   #自定义敏感头过滤器， 会覆盖掉默认的敏感头 ZuulProperties.java -> sensitiveHeaders
   sensitive-headers: token
-
-  ratelimit:
-    enabled: true  #开启多维度限流
+  ribbon-isolation-strategy: thread
+  #ratelimit:
+    #enabled: true  #开启多维度限流
 
     #在一个单位时间窗内 通过该zuul的用户数量、ip数量、及url数量 都不能超过3个
-    default-policy:  #设置限流策略
-        quota: 1     #指定限流的时间窗数量
-        refresh-interval: 3    #时间窗大小,单位是秒
-        limit: 3               #在指定的单位时间窗内 启用限流的 限定值
-        type: origin   #  user  #cloud-gateway:fd:anonymous   request.getRemoteUser();
+    #default-policy:  #设置限流策略
+        #quota: 1     #指定限流的时间窗数量
+        #refresh-interval: 3    #时间窗大小,单位是秒
+        #limit: 3               #在指定的单位时间窗内 启用限流的 限定值
+        #type: origin   #  user  #cloud-gateway:fd:anonymous   request.getRemoteUser();
                     #  url   cloud-gateway:fd:/hello
                     #  origin  cloud-gateway:fd:0:0:0:0:0:0:0:1
       #,origin,url   #指定限流维度
@@ -51,3 +46,12 @@ zuul:
   gray:
     users: zhangsan,lisi
     version: V2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  security:
+    enabled: false

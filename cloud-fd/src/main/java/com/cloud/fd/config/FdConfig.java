@@ -1,5 +1,6 @@
 package com.cloud.fd.config;
 
+import com.alibaba.csp.sentinel.annotation.aspectj.SentinelResourceAspect;
 import com.cloud.fd.lb.FdLoadBalanceRule;
 import com.netflix.loadbalancer.IRule;
 import feign.Logger;
@@ -14,21 +15,27 @@ import java.util.List;
 @SpringBootConfiguration
 public class FdConfig {
 
-    /*@Bean
+    @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
-    }*/
+    }
 
-    @Bean
+    /*@Bean
     public IRule loadBalanceRule() {
         List<Integer> excludePorts = new ArrayList<>();
         //excludePorts.add(8081);
         return new FdLoadBalanceRule(excludePorts);
-    }
+    }*/
 
     @Bean
     public Logger.Level feignLevel() {
         return Logger.Level.BASIC;
+    }
+
+    //配置sentinel aspejctj
+    @Bean
+    public SentinelResourceAspect sentinelResourceAspect() {
+        return new SentinelResourceAspect();
     }
 }

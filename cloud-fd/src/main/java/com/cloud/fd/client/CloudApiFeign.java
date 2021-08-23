@@ -7,6 +7,7 @@ import feign.hystrix.FallbackFactory;
 import org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration;
 import org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 
 @FeignClient(
         value = "cloud-base",
@@ -19,6 +20,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 )
 public interface CloudApiFeign extends CloudApi {
 
+    @Component
     class DefaultFallbackFactory implements FallbackFactory<CloudApi> {
 
         @Override
