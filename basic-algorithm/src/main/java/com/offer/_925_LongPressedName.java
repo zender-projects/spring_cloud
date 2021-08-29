@@ -1,5 +1,7 @@
 package com.offer;
 
+import java.util.LinkedList;
+
 public class _925_LongPressedName {
 
     public boolean isLongPressedName(String name, String typed) {
@@ -20,6 +22,7 @@ public class _925_LongPressedName {
                 return false;
             }
         }
+
         return i == name.length();
     }
 
