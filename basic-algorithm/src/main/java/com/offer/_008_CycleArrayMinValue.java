@@ -43,7 +43,8 @@ public class _008_CycleArrayMinValue {
             return array[0];
         }
         int low = 0, high = array.length - 1;
-        while (high - low > 1) {
+        //while (high - low > 1) {
+        while (high > low) {
             int mid = (low + high) / 2;
             if (array[mid] > array[high]) {
                 //向右靠
@@ -57,5 +58,10 @@ public class _008_CycleArrayMinValue {
             }
         }
         return Math.min(array[low], array[high]);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2,2,2,0,1};
+        System.out.println(minNumberInRotateArray2(arr));
     }
 }
